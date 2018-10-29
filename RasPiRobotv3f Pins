@@ -1,0 +1,17 @@
+Wiring PI PIN / Python PIN (GPIO PIN)
+    RIGHT_PWM_PIN = 15 //14
+    RIGHT_1_PIN = 12 //10
+    RIGHT_2_PIN = 6 //25
+    LEFT_PWM_PIN = 5 //24
+    LEFT_1_PIN = 0 //17
+    LEFT_2_PIN = 7 //4
+    SW1_PIN = 14 //11
+    SW2_PIN = 13 //9
+    LED1_PIN = 10 //8
+    LED2_PIN = 11 //7
+    OC1_PIN = 3 //22
+    OC2_PIN = 2 ??//27
+    OC2_PIN_R1 = ?? //21
+    OC2_PIN_R2 = 2 ?? //27
+    TRIGGER_PIN = 1 //18
+    ECHO_PIN = 4 //23
