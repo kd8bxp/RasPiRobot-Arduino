@@ -27,15 +27,15 @@ PermitRootLogin yes
   
 IF you run into problems, I suggest looking at the issues on the repository, while this is an older project, I found the information to be very good.  
 
-There are some limitations, the creator of RasPiArduino doesn't have any type of analogWrite,  I am using a bit-bang method, that seems to work, at times the robot does seem to studder a bit.  
+There are some limitations, the creator of RasPiArduino doesn't have any type of analogWrite,  I am using a bit-bang method, that seems to work, at times the robot does seem to stutter a bit.  
 Most of the libraries don't work, so you need to come up with your own methods, luckly most of this is easy to do.  
 
 The Arduino project uses the same pin numbers that Simon Monk uses (GPIO numbers), I have included a couple of just pure tests C++ code samples (examples), using WiringPI with is using it's own pin numbers. And I've included a list of the pin numbers.  
 
 ## Things To Do
 
-Make some more pure C++ examples (forward, backward, stop, ect).  
-Finish out the rest of the motor code (Right Turn, Backward, ect)  
+~~Make some more pure C++ examples (forward, backward, stop, ect).~~  
+~~Finish out the rest of the motor code (Right Turn, Backward, ect)~~  
 
 ## Contributing
 
