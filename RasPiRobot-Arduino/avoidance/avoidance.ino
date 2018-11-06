@@ -39,7 +39,10 @@ const long interval = 5000;
 long duration;
 int distance;
 
-int speed = 5000; //This is the PWM from 0 to 16000
+int fastspd = 50;
+int mediumspd = 30;
+int slowspd = 25;
+int speed = 50; //percent of speed from 0 to 100 (0 stop, 100 full speed).
 
 void setup() {
 
@@ -57,11 +60,14 @@ void setup() {
 void loop() {
 
   updatePWM();
-if (ping() > 15) {  
+if (ping() > 15) {
+  speed = fastspd;  
   forward();
-} else {
   
-  turnLeft();
+} else {
+  speed = slowspd;
+  //turnLeft();
+  turnRight();
     }
 }
 
@@ -86,12 +92,28 @@ void forward() {
   digitalWrite(RIGHT_2_PIN, HIGH);
 }
 
+void backward() {
+  //Backward Motion
+  digitalWrite(LEFT_1_PIN, HIGH);
+  digitalWrite(LEFT_2_PIN, LOW);
+  digitalWrite(RIGHT_1_PIN, HIGH);
+  digitalWrite(RIGHT_2_PIN, LOW);
+}
+
 void turnLeft() {
   
   digitalWrite(LEFT_1_PIN, LOW);
   digitalWrite(LEFT_2_PIN, HIGH);
   digitalWrite(RIGHT_1_PIN, HIGH);
   digitalWrite(RIGHT_2_PIN, LOW);
+}
+
+void turnRight() {
+  
+  digitalWrite(LEFT_1_PIN, HIGH);
+  digitalWrite(LEFT_2_PIN, LOW);
+  digitalWrite(RIGHT_1_PIN, LOW);
+  digitalWrite(RIGHT_2_PIN, HIGH);
 }
 
 void stop() {
@@ -103,11 +125,11 @@ void stop() {
 }
 
 void pwm(int pin, int del){
- 
+ int spd = map(del,0, 100, 0, 16000); //set speed percent to a PWM from 0 to 16000
  digitalWrite(pin, HIGH);
- delayMicroseconds(del);
+ delayMicroseconds(spd);
  digitalWrite(pin, LOW);
- delayMicroseconds(16000 - del);
+ delayMicroseconds(16000 - spd);
 }
 
 int ping() {
